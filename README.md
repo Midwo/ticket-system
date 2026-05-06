@@ -21,7 +21,41 @@ Despite being an older Web Forms–based project, the application remains fully 
 * Display list of latest registrations.
 
 # 4. Screenshot
+Home Page – Dashboard & Statistics
+The main dashboard includes:
+* monthly status charts,
+* daily statistics,
+* weekly ticket counts,
+* a “News” section
 
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo1.png" width="900" alt="Home Page – Dashboard & Statistics">
+
+Ticket Creation Form
+Allows users to create a new ticket with:
+* priority,
+* category,
+* due date,
+* ticket description/content.
+
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo2.png" width="900" alt="Ticket Creation Form">
+
+Ticket List – Helpdesk View
+Displays all open tickets grouped by status, including information about tickets that are not yet assigned to any helpdesk operator.
+
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo3.png" width="900" alt="Helpdesk View - all">
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo4.png" width="900" alt="Helpdesk View - blocking">
+
+Admin Panel – Users & Permissions
+Administrative tools:
+* assign permission levels (0, 1, 2),
+* delete user accounts,
+* view recent registrations,
+* generate summary reports of accounts and permissions.
+  
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo5.png" width="600" alt="assign permission levels (0, 1, 2)">
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo6.png" width="600" alt="delete user accounts">
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo7.png" width="600" alt="new news">
+<img src="https://github.com/Midwo/ticket-system/blob/master/Photo8.png" width="900" alt="generate summary reports">
 
 # 5. Ticket Management
 * Create new tickets with:
