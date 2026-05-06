@@ -1,0 +1,287 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Praca_Inz_Michal_Dwojak.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - MD Ticket System</title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <meta name="description" content="The description of my page" />
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+       
+                <asp:ScriptReference Name="MsAjaxBundle" />
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <asp:ScriptReference Name="respond" />
+                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" runat="server" href="~/">MD Ticket System</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+ <asp:LoginView id="LoginView3" runat="server">
+              
+                   <RoleGroups>
+                    <asp:RoleGroup Roles="admin">
+                        <ContentTemplate>
+                        <ul class="nav navbar-nav">     
+                                  
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opcje <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li class="nav-header">Zgłoszenia</li>
+                                    <li><a  runat="server" href="~\Page\Nowe_Zgloszenie">Napisz zgłoszenie</a></li>
+                                    <li><a  runat="server" href="~\Page\Widok">Widok zgłoszeń normalnych</a></li>
+                                    <li><a  runat="server" href="~\Page\Zablokowane">Widok zgłoszeń zablokowanych</a></li>
+                                    <li class="divider"></li>   
+                                    <li class="nav-header">Dodatkowe</li>
+                                    <li><a runat="server" href="~\Page\Reshaslo">Zresetowanie hasła</a></li>
+                                    <li><a runat="server" href="~\Page\Uprawnienia">Nadanie uprawnień</a></li>
+                                    <li><a runat="server" href="~\Page\Usuniecie_usera">Usunięcie użytkownika</a></li>
+                                      <li><a runat="server" href="~\Page\Dodaj_news">Dodaj news</a></li>
+                              
+                                 
+                                </ul>
+                            </li>
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                    <asp:RoleGroup Roles="helpdesk">
+                        <ContentTemplate>
+                          <ul class="nav navbar-nav">    
+                                  
+                            <li class="dropdown"> 
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Opcje <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li class="nav-header">Zgłoszenia</li> 
+                                    <li><a  runat="server" href="~\Page\Nowe_Zgloszenie">Napisz zgłoszenie</a></li>
+                                    <li><a  runat="server" href="~\Page\Widok">Widok zgłoszeń normalnych</a></li>
+                                    <li><a  runat="server" href="~\Page\Zablokowane">Widok zgłoszeń zablokowanych</a></li>
+                                    <li class="divider"></li>   
+                                    <li class="nav-header">Dodatkowe</li>
+                                    <li><a runat="server" href="~\Page\Reshaslo">Zresetowanie hasła</a></li>
+                          
+                                 
+                                </ul>
+                            </li>
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                 
+                </RoleGroups>
+                <LoggedInTemplate>
+                      <ul class="nav navbar-nav"> 
+               </LoggedInTemplate>
+            </asp:LoginView>
+                         
+   <asp:LoginView id="LoginView2" runat="server">
+              
+                   <RoleGroups>
+                    <asp:RoleGroup Roles="admin">
+                        <ContentTemplate>
+                        <li class="dropdown"> 
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Raporty <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li class="nav-header">Zgłoszenia</li> 
+                                    <li><a  runat="server" href="~\Page\Statusy">Statusy</a></li>
+                                    <li class="divider"></li>  
+                                    <li class="nav-header">Heldepsk</li>
+                                    <li><a runat="server" href="~\Page\Statystki_helpdesku">Statystki helpdesku</a></li>
+                                    <li class="divider"></li>   
+                                    <li class="nav-header">Konta</li>
+                                    <li><a runat="server" href="~\Page\UP0">Uprawnienia poz.0</a></li>
+                                    <li><a runat="server" href="~\Page\UP1">Uprawienia poz.1</a></li>
+                                    <li><a runat="server" href="~\Page\UP2">Uprawienia poz.2</a></li>
+                                    <li><a runat="server" href="~\Page\UPall">Podsumowanie uprawnień</a></li>
+                                    <li><a runat="server" href="~\Page\Ostatnia_rejestracja">Ostatnie rejestracje</a></li>
+                                </ul>
+                            </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Szukaj <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="nav-header">Zgłoszenia</li>
+                                        
+                                        <li><a runat="server" href="~\Page\Szukaj">Szukaj</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                    <asp:RoleGroup Roles="helpdesk">
+                        <ContentTemplate>
+                          <li class="dropdown"> 
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Raporty <span class="caret"></span></a>
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li class="nav-header">Zgłoszenia</li>
+                                    <li><a  runat="server" href="~\Page\Statusy">Statusy</a></li>
+                                    <li class="divider"></li>   
+                                    <li class="nav-header">Heldepsk</li>
+                                    <li><a runat="server" href="~\Page\Statystki_helpdesku">Statystki helpdesku</a></li>
+                                    <li class="divider"></li>   
+                                    <li class="nav-header">Konta</li>
+                                    <li><a runat="server" href="~\Page\UP0">Uprawnienia poz.0</a></li>
+                                    <li><a runat="server" href="~\Page\UP1">Uprawienia poz.1</a></li>
+  
+                                    <li><a runat="server" href="~\Page\Ostatnia_rejestracja">Ostatnie rejestracje</a></li>
+                                </ul>
+                            </li>
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Szukaj <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="nav-header">Zgłoszenia</li>
+                                        <li><a runat="server" href="~\Page\Szukaj">Szukaj</a></li>
+                                    </ul>
+
+                                </li>
+                            </ul>
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                 
+                </RoleGroups>
+                <LoggedInTemplate>
+                     
+               </LoggedInTemplate>
+            </asp:LoginView>
+                              
+                              
+   <asp:LoginView id="LoginView1" runat="server">
+              
+                   <RoleGroups>
+                    <asp:RoleGroup Roles="admin">
+                        <ContentTemplate>
+                        
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                    <asp:RoleGroup Roles="helpdesk">
+                        <ContentTemplate>
+                          
+                        </ContentTemplate>
+                    </asp:RoleGroup>
+                 
+                </RoleGroups>
+                <LoggedInTemplate>
+                      <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Szukaj <span class="caret"></span></a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <li class="nav-header">Zgłoszenia</li>
+                                     
+                                        <li><a runat="server" href="~\Page\Moje">Szukaj</a></li>
+                                    </ul>
+                                </li>
+                                <li><a runat="server" href="~/Page/Ostatnie">Moje zgłoszenia</a></li>
+                                <li><a runat="server" href="~/Page/Nowe_Zgloszenie">Nowe zgłoszenie</a></li> 
+                    </ul>
+               </LoggedInTemplate>
+            </asp:LoginView>
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                            <AnonymousTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a runat="server" href="~/Account/Register">Rejestracja</a></li>
+                                    <li><a runat="server" href="~/Account/Login">Logowanie</a></li>
+                                </ul>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li><a runat="server" href="~/Account/Manage" title="Manage your account">Ustawienia</a></li>
+                                    <li>
+                                        <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Wyloguj" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                    </li>
+                                </ul>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
+            </div>
+        </div>
+        <div class="container body-content">
+
+           <br/>
+    <div class="alert alert-info" role="alert">
+  <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+  <span class="sr-only">Error:</span>
+  Witaj <%: Context.User.Identity.GetUserName()  %> - dziś jest <%: System.DateTime.Now.ToString("dd-MM-yyyy")  %>. Zapraszam do MD Ticket Sytem.
+</div>
+
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+            <hr />
+            <footer>
+               <asp:Label ID="Label1" runat="server" Visible="False"></asp:Label>
+              
+
+                       <div class="row">
+  <div class="col-xs-6 col-md-6">
+
+         <p>&copy; <%: DateTime.Now.Year %> - Michał Dwojak</p>
+             <address>
+        Kontakt: <a href="mailto:michal.dwojak92@gmail.com">michal.dwojak92@gmail.com</a>
+
+    </address>
+
+
+  </div>
+  <div class="col-xs-6 col-md-6">
+      
+    <asp:HyperLink 
+         runat="server" 
+         CssClass="btn btn-primary pull-right" 
+         Style="margin-left:5px;"
+         NavigateUrl="~/PAGE/Regulations">
+         Regulamin
+    </asp:HyperLink>
+
+    <asp:HyperLink 
+         runat="server" 
+         CssClass="btn btn-primary pull-right" 
+         NavigateUrl="~/PAGE/Policy">
+         Polityka prywatności
+    </asp:HyperLink>
+
+<%--   <a class ="btn btn-primary pull-right regulationsbutton" href="/PAGE/Policy">Polityka prywatności</a>
+   <a class ="btn btn-primary pull-right" href="/PAGE/Regulations">Regulamin</a>--%>
+  </div>
+</div>
+
+
+
+
+            </footer>
+        </div>
+    </form>
+</body>
+</html>
