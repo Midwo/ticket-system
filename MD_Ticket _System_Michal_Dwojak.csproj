@@ -432,6 +432,15 @@
     <Content Include="PAGE\Nowe_Zgloszenie.aspx" />
     <Content Include="PAGE\Widok.aspx" />
     <Content Include="PAGE\Zgloszenia1.aspx" />
+    <Content Include="Photo1.png" />
+    <Content Include="Photo2.png" />
+    <Content Include="Photo3.png" />
+    <Content Include="Photo4.png" />
+    <Content Include="Photo5.png" />
+    <Content Include="Photo6.png" />
+    <Content Include="Photo7.png" />
+    <Content Include="Photo8.png" />
+    <Content Include="Photo9.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
